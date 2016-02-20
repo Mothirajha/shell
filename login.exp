@@ -1,0 +1,7 @@
+#!/usr/bin/expect
+# Script to print user information who currently login , current date & time
+#
+spawn ssh user@domain_or_ipaddress
+expect "Password: "
+send "password\n"
+interact
