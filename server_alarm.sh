@@ -10,20 +10,20 @@ STREAMING=$(pgrep -lf recovering | awk '{print $1}')
 
 if [ $HDDSIZE -gt 90 ]
   then
-    echo "One of our server with ip $MYIP is dramatically using its HDD which is now above 90% (ie. $HDDSIZE), plz take necessary actions." | ssmtp rajha12@gmail.com
+    echo "One of our server with ip $MYIP is dramatically using its HDD which is now above 90% (ie. $HDDSIZE), plz take necessary actions." | ssmtp email@domain.com 
 fi
 
 if [ $FREEMEM -lt 512 ]
   then
-    echo "One of our server with ip $MYIP is dramatically using its Memory, where memory is less than 512MB (ie. $FREEMEM), plz take necessary actions." | ssmtp rajha12@gmail.com
+    echo "One of our server with ip $MYIP is dramatically using its Memory, where memory is less than 512MB (ie. $FREEMEM), plz take necessary actions." | ssmtp email@domain.com 
 fi
 
 if [ -z $RECOVERING ]
   then
-    echo "One of our slave database server with ip $MYIP has stopped its recovering process, plz take necessary actions." | ssmtp rajha12@gmail.com 
+    echo "One of our slave database server with ip $MYIP has stopped its recovering process, plz take necessary actions." | ssmtp email@domain.com 
 fi
 
 if [ -z $STREAMING ]
   then
-    echo "One of our slave database server with ip $MYIP has stopped its streaming process, plz take necessary actions." | ssmtp rajha12@gmail.com
+    echo "One of our slave database server with ip $MYIP has stopped its streaming process, plz take necessary actions." | ssmtp email@domain.com 
 fi
